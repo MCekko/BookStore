@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
+    <link rel="stylesheet" href="style.css">
+    <title> BookStore</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div>
+                <h1 class="Title">BookStore</h1>
+            </div>
+            <div class="Buscador">
+                <section>
+                    <input id="Search" type="text" placeholder="Search...">
+                    <button @click=" getData() ">Search</button>
+                </section>
+            </div>
+
+        </header>
+        <div>
+            <ul class="Portadas">
+                <li v-for="book in data2"><img v-bind:src="book.cover"></li>
+            </ul>
+        </div>
+
+    </div>
+    <script src="main.js"></script>
+</body>

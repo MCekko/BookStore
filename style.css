@@ -1,0 +1,40 @@
+.Title {
+    text-align: center;
+    width: 100%;
+    margin: 0px auto;
+    color: red;
+    font-size: 80px;
+    letter-spacing: 5px;
+    top: 50%;
+    margin-top: 20px;
+
+    text-shadow: -1px -1px 1px black,
+        3px 3px 0px white,
+        6px 6px 0px black;
+}
+
+body {
+    background-image: url("libreria-grande-1000x500.jpg")
+}
+
+.Portadas {
+    list-style: none;
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+li {
+    width: 25%;
+}
+
+img {
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+.Buscador {
+    background-color: red;
+    padding: 20px;
+    text-align: center
+}
