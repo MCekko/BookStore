@@ -13,28 +13,100 @@
         6px 6px 0px black;
 }
 
+.TitleBack {
+    text-align: center;
+    width: 100%;
+    margin: 0px auto;
+    color: black;
+    font-size: 25px;
+    letter-spacing: 5px;
+    top: 50%;
+    margin-top: 20px;
+
+    text-shadow: -1px -1px 1px black,
+        1px 1px 0px white,
+        3px 3px 0px black;
+}
+
 body {
     background-image: url("libreria-grande-1000x500.jpg")
 }
 
-.Portadas {
-    list-style: none;
-    margin-top: 50px;
-    display: flex;
-    flex-flow: row wrap;
-}
+.description-back {
+    padding: 20px;
+    text-align: center;
+    color: black;
 
-li {
-    width: 25%;
 }
 
 img {
-    width: 50%;
-    margin-bottom: 30px;
+    width: 100%;
+    height: 100%;
+
 }
 
 .Buscador {
     background-color: red;
     padding: 20px;
     text-align: center
+}
+
+/* un solo contenedor, mantiene perspectiva */
+.flip-container {
+    perspective: 1000;
+    width: auto;
+    height: auto;
+    margin: 30px;
+
+}
+
+.flip-container,
+.front,
+.back {
+    width: 200px;
+    height: 300px;
+}
+
+/* voltea el panel al colocar el mouse(HOVER) */
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+/* velocidad del flip aqui */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+/* oculta el panel posterior durante el cambio */
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* panel frontal, enviado atras */
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+/* detras,inicialmente el panel oculto */
+.back {
+    transform: rotateY(180deg);
+    background-color: red;
+}
+
+.container {
+    display: flex;
+    list-style: none;
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
 }

@@ -3,15 +3,6 @@ var app = new Vue({
     data: {
         data2: [],
         data3: [],
-        arrayTest: [{
-            name: "Alex"
-        }, {
-            name: "Dario"
-        }, {
-            name: "Alberto"
-        }, {
-            name: "Rodrigo"
-        }]
     },
     created: function () {
         this.getData()
@@ -32,16 +23,21 @@ var app = new Vue({
 
             }).then(function (json) {
                 app.data2 = json.books
-                for (var i = 0; i < app.data2.length; i++) {
-                    app.data3 = app.data2[i].cover;
-                }
+
                 console.log(app.data2);
-
-
 
             }).catch(function (error) {
                 console.log("Request failed:" + error.message);
             })
+        },
+        SearchBooks: function () {
+
+            for (var i = 0; i < app.data2.length; i++) {
+                if (app.data2.title == document.getElementById("Search").value) {
+
+                }
+            }
+
         },
     }
 });

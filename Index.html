@@ -21,17 +21,25 @@
             <div class="Buscador">
                 <section>
                     <input id="Search" type="text" placeholder="Search...">
-                    <button @click=" getData() ">Search</button>
+                    <button @click="getData()">Search</button>
                 </section>
             </div>
 
         </header>
-        <div>
-            <ul class="Portadas">
-                <li v-for="book in data2"><img v-bind:src="book.cover"></li>
-            </ul>
-        </div>
+        <div class="container">
+            <div v-for="book in data2" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                    <div class="front">
+                        <img v-bind:src="book.cover">
+                    </div>
+                    <div class="back">
+                        <h3 class="TitleBack">{{book.title}}</h3>
+                        <p class="description-back">{{book.description}}</p>
+                    </div>
+                </div>
+            </div>
 
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
